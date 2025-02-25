@@ -142,4 +142,10 @@ cp /etc/kibana/kibana.yml /etc/kibana/kibana.bak
 nano /etc/kibana/kibana.yml
 ```
 
-**Set IP and Port**
+**Set IP to server IP address and Port to 5601**
+
+![Image Alt]([)](https://github.com/andypando/Mist-Webhook-Receiver/blob/9d9fad594c5972321999840dad36a71c45b34e2e/Kibana_1.png)
+
+**Set uncomment Elasticsearch Username and Password, be sure PW is what you set during Elasticsearch Setup**
+
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/9d9fad594c5972321999840dad36a71c45b34e2e/Kibana_2.png)

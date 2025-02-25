@@ -12,7 +12,15 @@ will be a collaborative project that will be useful to anyone using Juniper Mist
 
 All the Mist webhooks originate from the Mist cloud, so you will need inbound firewall NAT rules to direct
 these webhooks to your ELK server.
+
 | Mist Cloud  | Webhook IP Address |
 | ------------- | ------------- |
 | Global 01 - manage.mist.com  | 54.193.71.17 & 54.215.237.20	  |
 | Global 03 - manage.ac2.mist.com | 34.231.34.177 & 54.235.187.11 & 18.233.33.230  |
+
+For this example we are using port 8899, but you can choose any port number you like just be sure to change
+the port number to the one you are using throught this walk through.
+
+You will need an inbound / destination NAT rule for the webhooks and it can further be limited to the source
+IP addresses for the cloud instance your Org. resides in, see table above.
+

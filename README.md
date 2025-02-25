@@ -32,12 +32,30 @@ This is an example of the NAT rules configured on a Mist WAN Edge device:
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/785d36ce973b9e7678698ecb6b55fb58739a0073/NAT.png)
 
 
-# Setup Ubuntu Server
+## Setup Ubuntu Server
 
 You will need an Ubuntu server running to host the services required. This could be either a Virtualized Host or physical box.
 The compute required is minimal, but the storage will dictate how many webhook topic you can send as well as the retention time
 of the raw data. This walk through will use the current Ubuntu 24.04.2 LTS image, available for download here: [Ubuntu Server Download](https://ubuntu.com/download/server "Ubuntu Server Download")
 While not a neccessity, you could use a version of Ubuntu that includes a desktop environment, but all instructions will be based off of a server version and will have CLI commands.
 
+Here is the VM Ware settings for a basic, minimal server to play with. Note that the HDD is thin provisioned, this allows for more dynamic sizing.
+For a production machine, it would be recommended to increase the HDD size.
 
+Continue through setup, if using a server image you can install minimal packages. At Network Configuration, 
+you will want to change from DHCP to Manual and setup a static IP for this server to use. It will be the same 
+server address used on the inside of your NAT rules. If asked, install SSH server. It is quicker to SSH into this
+server and copy/paste the commands from here.
 
+### Make yourself root
+SSH to the server using the username/password that you setup on install. Switch to a root user:
+```
+sudo su -
+```
+
+### Install OpenJDK 11
+```
+apt update && apt upgrade -y && apt install -y default-jre default-jdk curl
+```
+
+ 

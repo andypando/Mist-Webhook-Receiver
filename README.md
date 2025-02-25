@@ -8,7 +8,10 @@ with the data.
 Dashboard JSON files can be committed as folks build useful things in their environment. The hope is that this
 will be a collaborative project that will be useful to anyone using Juniper Mist APs.
 
+
 # Installation Steps
+
+
 ## Configure Router / Firewall for inbound webhooks
 All the Mist webhooks originate from the Mist cloud, so you will need inbound firewall and/or NAT rules to direct
 these webhooks to your ELK server.
@@ -27,6 +30,7 @@ IP addresses for the cloud instance your Org. resides in, see table above.
 This is an example of the NAT rules configured on a Mist WAN Edge device:
 
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/785d36ce973b9e7678698ecb6b55fb58739a0073/NAT.png)
+
 
 # Setup Ubuntu Server
 

@@ -1,16 +1,16 @@
 # Mist-Webhook-Receiver
 
 This project was created to give you the steps to setup an Ubuntu server and install the ELK stack on it.
-Logstash is will be configured as a HTTP Receiver to accept the webhooks from Mist, they will be 
+Logstash will be configured as an HTTP Receiver to accept the webhooks from Mist, they will be 
 processed into Elasticsearch and Kibana allows users to search the webhooks and build useful dashboards
 with the data.
 
 Dashboard JSON files can be committed as folks build useful things in their environment. The hope is that this
 will be a collaborative project that will be useful to anyone using Juniper Mist APs.
 
-# Allow for inbound webhooks
-
-All the Mist webhooks originate from the Mist cloud, so you will need inbound firewall NAT rules to direct
+# Installation Steps
+## Configure Router / Firewall for inbound webhooks
+All the Mist webhooks originate from the Mist cloud, so you will need inbound firewall and/or NAT rules to direct
 these webhooks to your ELK server.
 
 | Mist Cloud  | Webhook IP Address |
@@ -24,4 +24,16 @@ the port number to the one you are using throught this walk through.
 You will need an inbound / destination NAT rule for the webhooks and it can further be limited to the source
 IP addresses for the cloud instance your Org. resides in, see table above.
 
+This is an example of the NAT rules configured on a Mist WAN Edge device:
+
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/785d36ce973b9e7678698ecb6b55fb58739a0073/NAT.png)
+
+# Setup Ubuntu Server
+
+You will need an Ubuntu server running to host the services required. This could be either a Virtualized Host or physical box.
+The compute required is minimal, but the storage will dictate how many webhook topic you can send as well as the retention time
+of the raw data. This walk through will use the current Ubuntu 24.04.2 LTS image, available for download here: [Ubuntu Server Download](https://ubuntu.com/download/server "Ubuntu Server Download")
+While not a neccessity, you could use a version of Ubuntu that includes a desktop environment, but all instructions will be based off of a server version and will have CLI commands.
+
+
+

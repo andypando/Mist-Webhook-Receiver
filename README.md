@@ -124,7 +124,7 @@ systemctl enable elasticsearch
 apt install kibana
 ```
 
-### Remove legacy OpenSSL
+### Comment out legacy OpenSSL to disable it
 
 ```
 nano /etc/kibana/node.options

@@ -50,23 +50,40 @@ server address used on the inside of your NAT rules. If asked, install SSH serve
 server and copy/paste the commands from here.
 
 ### Make yourself root
+
 SSH to the server using the username/password that you setup on install. Switch to a root user:
 ```
 sudo su -
 ```
 
 ### Install OpenJDK 11 & curl
+
 ```
 apt update && apt upgrade -y && apt install -y default-jre default-jdk curl
 ```
 
  ### Install Elasticsearch
+
  ```
 curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg
 ```
+
 ```
 echo "deb [signed-by=/usr/share/keyrings/elastic.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 ```
+
 ```
 apt update && apt install -y elasticsearch
 ```
+
+### Configure Elasticsearch
+
+```
+cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.bak
+```
+
+```
+nano /etc/elasticsearch/elasticsearch.yml
+```
+
+Under Network set network.host, http.host, http.port

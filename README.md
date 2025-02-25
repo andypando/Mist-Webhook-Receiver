@@ -192,3 +192,19 @@ output {
   }
 }
 ```
+
+### Enable Logstash at boot and start service
+```
+systemctl start logstash && systemctl enable logstash
+```
+
+## Configure Webhook in Mist
+
+This can be enabled for either the entire Org or for individual site:
+
+Entire Org: Organization -> Settings
+Specific Sites: Organization -> Site Configuration -> Click Into the Site
+
+Enable client-join and any other webhooks you want to send. Use your outside NAT IP and port 8899
+
+![Image Alt]()

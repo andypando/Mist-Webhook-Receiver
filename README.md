@@ -1,6 +1,6 @@
 # Mist-Webhook-Receiver
 
-This project was created to give you the steps to setup an Ubuntu server and install the ELK stack on it.
+This project was created to give you the steps to setup an Ubuntu server and install the [ELK stack](https://www.elastic.co/) on it.
 Logstash will be configured as an HTTP Receiver to accept the webhooks from Mist, they will be 
 processed into Elasticsearch and Kibana allows users to search the webhooks and build useful dashboards
 with the data.
@@ -149,3 +149,46 @@ nano /etc/kibana/kibana.yml
 **Set uncomment Elasticsearch Username and Password, be sure PW is what you set during Elasticsearch Setup**
 
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/9d9fad594c5972321999840dad36a71c45b34e2e/Kibana_2.png)
+
+### Enable Kibana at boot and restart service
+
+```
+systemctl enable kibana && systemctl restart kibana
+```
+
+### Install Logstash
+
+```
+apt install logstash
+```
+
+### Setup http listener
+
+```
+nano /etc/logstash/conf.d/http.conf
+```
+
+**Paste in the following code block, *BE SURE TO CHANGE PASSWORD***
+
+```
+input {
+  http {
+    host => "0.0.0.0"
+    port => 8899
+  }
+}
+filter {
+  split { field => "[events]" }
+  if [topic] == "client-join" {
+    mutate {add_field => {"radius_acct" => "no"}}
+  }
+}
+output {
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "%{[topic]}-%{+YYYY.MM.dd}"
+    user => "elastic"
+    password => "--Password set above--"
+  }
+}
+```

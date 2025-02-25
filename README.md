@@ -24,3 +24,4 @@ the port number to the one you are using throught this walk through.
 You will need an inbound / destination NAT rule for the webhooks and it can further be limited to the source
 IP addresses for the cloud instance your Org. resides in, see table above.
 
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/NAT.png)

@@ -87,3 +87,9 @@ apt install nano && nano /etc/elasticsearch/elasticsearch.yml
 ```
 
 **Under Network, set the following for network.host, http.host, http.port**
+
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/be6a8b58ffa6b267808cd05f339124ef9465cbb0/ES_Config.png)
+
+**Under Security**
+
+![Image Alt]()

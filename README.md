@@ -130,3 +130,8 @@ apt install kibana
 nano /etc/kibana/node.options
 ```
 
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/09529ad5f50884154336045a3f4ccf98b7c3d7c0/Kibana_Sec.png)
+
+
+
+

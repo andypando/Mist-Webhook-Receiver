@@ -86,4 +86,4 @@ cp /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.bak
 nano /etc/elasticsearch/elasticsearch.yml
 ```
 
-Under Network set network.host, http.host, http.port
+**Under Network set network.host, http.host, http.port**

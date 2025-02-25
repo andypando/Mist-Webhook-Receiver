@@ -117,3 +117,16 @@ systemctl start elasticsearch
 ```
 systemctl enable elasticsearch
 ```
+
+### Install and enable Kibana
+
+```
+apt install kibana
+```
+
+### Remove legacy OpenSSL
+
+```
+nano /etc/kibana/node.options
+```
+

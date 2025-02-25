@@ -42,6 +42,8 @@ While not a neccessity, you could use a version of Ubuntu that includes a deskto
 Here is the VM Ware settings for a basic, minimal server to play with. Note that the HDD is thin provisioned, this allows for more dynamic sizing.
 For a production machine, it would be recommended to increase the HDD size.
 
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/a68a0998978eb980c64f30b3f03f5d19742e41c0/Sample_VM.png)
+
 Continue through setup, if using a server image you can install minimal packages. At Network Configuration, 
 you will want to change from DHCP to Manual and setup a static IP for this server to use. It will be the same 
 server address used on the inside of your NAT rules. If asked, install SSH server. It is quicker to SSH into this
@@ -53,9 +55,12 @@ SSH to the server using the username/password that you setup on install. Switch 
 sudo su -
 ```
 
-### Install OpenJDK 11
+### Install OpenJDK 11 & curl
 ```
 apt update && apt upgrade -y && apt install -y default-jre default-jdk curl
 ```
 
- 
+ ### Install Elasticsearch
+ ```
+curl -fsSL https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic.gpg
+```

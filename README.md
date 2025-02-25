@@ -90,6 +90,30 @@ apt install nano && nano /etc/elasticsearch/elasticsearch.yml
 
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/be6a8b58ffa6b267808cd05f339124ef9465cbb0/ES_Config.png)
 
-**Under Security**
+**Under Security add**
 
-![Image Alt]()
+```
+xpack.security.enabled: true
+```
+
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/c3f2f5442990b39911833dea4d9d1eab919e3dc5/ES_Security.png)
+
+For new users, Ctrl+x will exit you from nano text editor and prompt you to save changes.
+
+### Start Elasticsearch
+
+```
+systemctl start elasticsearch
+```
+
+### Setup Elasticsearch passwords - These can call be the same or different, but make it something other than user password
+
+```
+/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+```
+
+### Set Elasticsearch to run at boot
+
+```
+systemctl enable elasticsearch
+```

@@ -97,7 +97,7 @@ xpack.security.enabled: true
 xpack.security.authc.api_key.enabled: true
 ```
 
-![Image Alt]()
+![Image Alt]([)](https://github.com/andypando/Mist-Webhook-Receiver/blob/53e515764197293a3638d0fd0b4698a752dbe6b2/images/ES_sec.png)
 
 For new users, Ctrl+x will exit you from nano text editor and prompt you to save changes.
 
@@ -131,7 +131,7 @@ apt install kibana
 nano /etc/kibana/node.options
 ```
 
-![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/09529ad5f50884154336045a3f4ccf98b7c3d7c0/Kibana_Sec.png)
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/53e515764197293a3638d0fd0b4698a752dbe6b2/images/Kibana_sec.png)
 
 ### Configure Kibana
 

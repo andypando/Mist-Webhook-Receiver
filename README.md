@@ -56,10 +56,10 @@ SSH to the server using the username/password that you setup on install. Switch 
 sudo su -
 ```
 
-### Install OpenJDK 11 & curl
+### Install OpenJDK 11 & other Utils
 
 ```
-apt update && apt upgrade -y && apt install -y default-jre default-jdk curl
+apt update && apt upgrade -y && apt install -y default-jre default-jdk curl tcpdump
 ```
 
  ### Install Elasticsearch
@@ -211,15 +211,35 @@ Enable client-join and any other webhooks you want to send. Use your outside NAT
 
 ## Test webhooks
 
-Run the following command on the server to see if webhook are getting forwarded to it properly. You may have to bounce some clients to trigger new join webhook to get fired.
+Find the interface in use by your server, use:
+
+```
+ip a
+```
+
+This will list all the active interfaces, find the one that has your static IP address. It will likely be eno1 or ens160
+
+Run one of the following commands (depending on the interface or edit as needed) on the server to see if webhook are getting forwarded to it properly. You may have to bounce some clients to trigger new join webhook to get fired.
 
 ```
 tcpdump -Xni eno1 port 8899
 ```
+_or_
+```
+tcpdump -Xni ens160 port 8899
+```
+
+You should see something similar to:
+
+> 01:36:31.872892 IP 54.215.237.20.3854 > 10.10.10.12.8899: Flags [.], ack 2201270769, win 491, options [nop,nop,TS val 2775259957 ecr 740392647], length 0  
+>	0x0000:  4500 0034 df59 4000 3606 2d69 36d7 ed14  E..4.Y@.6.-i6...  
+>	0x0010:  0a0a 0a0c 0f0e 22c3 bf74 f896 8334 b9f1  ......"..t...4..  
+>	0x0020:  8010 01eb aa44 0000 0101 080a a56b 1b35  .....D.......k.5  
+>	0x0030:  2c21 7ec7  
 
 To exit out of tcpdump, press Ctrl-c
 
-### Finish setting up Kibana
+## Finish setting up Kibana
 
 * Using a browser on a computer that can access your server, navigate to to it on port 5601 -> http://<server_IP>:5601
 * Username will be _elastic_ and the password will be what you set when configuring Elasticsearch

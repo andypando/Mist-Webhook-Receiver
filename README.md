@@ -96,7 +96,7 @@ apt install nano && nano /etc/elasticsearch/elasticsearch.yml
 xpack.security.enabled: true
 ```
 
-![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/c3f2f5442990b39911833dea4d9d1eab919e3dc5/ES_Security.png)
+![Image Alt]()
 
 For new users, Ctrl+x will exit you from nano text editor and prompt you to save changes.
 

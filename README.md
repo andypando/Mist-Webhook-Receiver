@@ -97,8 +97,7 @@ xpack.security.enabled: true
 xpack.security.authc.api_key.enabled: true
 ```
 
-![Image Alt]([)](https://github.com/andypando/Mist-Webhook-Receiver/blob/53e515764197293a3638d0fd0b4698a752dbe6b2/images/ES_sec.png)
-
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/dc95efa816ece7bed773b6c43dafaf6cfe43bf2c/images/ES_sec.png)
 For new users, Ctrl+x will exit you from nano text editor and prompt you to save changes.
 
 ### Start Elasticsearch

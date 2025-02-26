@@ -94,6 +94,7 @@ apt install nano && nano /etc/elasticsearch/elasticsearch.yml
 
 ```
 xpack.security.enabled: true
+xpack.security.authc.api_key.enabled: true
 ```
 
 ![Image Alt]()

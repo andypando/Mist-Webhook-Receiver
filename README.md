@@ -247,3 +247,12 @@ To exit out of tcpdump, press Ctrl-c
 * Setup an Index Pattern for each webhook coming in, use @timestamp for Timestamp Field
 
 ![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/5555bc1ab8e95d5371a52cede03b8a56515939bb/Index.png)
+
+You can see the data in elasticssearch by clicking the hamburger on the top left and selecting “Discover”. You can start to visualize your data in “Dashboards”
+
+## Still Need To Do
+
+- [ ] Make a YouTube video on setting up Index Pattern
+- [ ] Make a section or video on searching for records
+- [ ] Make a section or video on building dashboards
+- [ ] Start a repo for dashboard JSON file that can be linked into Kibana

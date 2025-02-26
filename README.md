@@ -207,4 +207,23 @@ Specific Sites: Organization -> Site Configuration -> Click Into the Site
 
 Enable client-join and any other webhooks you want to send. Use your outside NAT IP and port 8899
 
-![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/dd50d3b871a347af3b57eca952ab55777a6fe791/Mist.png)
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/21cb6a0d556b2a3991ff2867ebd8829bedcda77f/Mist_Web.png)
+
+## Test webhooks
+
+Run the following command on the server to see if webhook are getting forwarded to it properly. You may have to bounce some clients to trigger new join webhook to get fired.
+
+```
+tcpdump -Xni eno1 port 8899
+```
+
+To exit out of tcpdump, press Ctrl-c
+
+### Finish setting up Kibana
+
+* Using a browser on a computer that can access your server, navigate to to it on port 5601 -> http://<server_IP>:5601
+* Username will be _elastic_ and the password will be what you set when configuring Elasticsearch
+* If you are receiving webhooks and Logstash if forwarding them properly, you may be prompted to setup Indexes when you log in, or go to Management > Stack Management > Index Patterns
+* Setup an Index Pattern for each webhook coming in, use @timestamp for Timestamp Field
+
+![Image Alt]()

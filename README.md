@@ -246,4 +246,4 @@ To exit out of tcpdump, press Ctrl-c
 * If you are receiving webhooks and Logstash if forwarding them properly, you may be prompted to setup Indexes when you log in, or go to Management > Stack Management > Index Patterns
 * Setup an Index Pattern for each webhook coming in, use @timestamp for Timestamp Field
 
-![Image Alt]()
+![Image Alt](https://github.com/andypando/Mist-Webhook-Receiver/blob/5555bc1ab8e95d5371a52cede03b8a56515939bb/Index.png)
